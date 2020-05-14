@@ -3,6 +3,7 @@ using System.Diagnostics;
 using System.Text;
 using System.Threading;
 using System.Windows;
+using System.Windows.Input;
 using System.Windows.Media;
 
 namespace ColorPickerAlpha
@@ -10,18 +11,24 @@ namespace ColorPickerAlpha
     public partial class MainWindow : Window
     {
         Color curColor;
-        //automatically start looking for colors
-        bool isClicked = true;
+        bool isClicked = true; //automatically start looking for colors
+        bool isInWindow = false;
 
         public MainWindow()
         {
             InitializeComponent();
 
+            Loaded += delegate
+            {
+                MouseLeave += delegate { isInWindow = false; };
+                MouseEnter += delegate { isInWindow = true; };
+            };
+
             new Thread(() =>
             {
                 while (true)
                 {
-                    if (!isClicked)
+                    if (!isClicked || isInWindow) 
                         continue;
 
                     (int x, int y) = ColorPicker.GetPhysicalCursorCoords();
