@@ -36,7 +36,6 @@ namespace PowerToys_Settings_Sandbox.Views
             onLaunchContentDialog dialog = new onLaunchContentDialog();
             dialog.PrimaryButtonClick += Dialog_PrimaryButtonClick;
             await dialog.ShowAsync();
-<<<<<<< HEAD
         }
 
         /// <summary>
@@ -48,8 +47,6 @@ namespace PowerToys_Settings_Sandbox.Views
             ContentDialog updateDialog = new UpdateContentDialog();
 
             await updateDialog.ShowAsync();
-=======
->>>>>>> 26743a58... Recognize first launch
         }
         
 
