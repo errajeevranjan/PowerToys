@@ -28,7 +28,7 @@
 
         </Grid.RowDefinitions>
 
-        <Button Grid.Row = "0" Grid.Column = "0" Opacity="1" VerticalAlignment="Center" HorizontalAlignment="Center" Height="40" Width="46"  Margin="10,4,10,5" >
+        <Button Grid.Row = "0" Grid.Column = "0" Click="Eyedropper_Click" Opacity="1" VerticalAlignment="Center" HorizontalAlignment="Center" Height="40" Width="46"  Margin="10,4,10,5" >
             <Button.Background>
                 <ImageBrush ImageSource="Eyedropper-icon.png" Stretch="Uniform"/>
             </Button.Background>
